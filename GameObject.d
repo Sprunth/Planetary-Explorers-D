@@ -2,12 +2,15 @@ module GameObject;
 
 import dsfml.graphics;
 
-interface IUpdateable()
+interface IUpdateable
 {
 	void Update();
 }
 
-interface IDrawable()
+interface IDrawable
 {
-	void Draw();
+	void Draw(DrawLayer dl, RenderTarget target);
 }
+
+enum DrawLayer {Background=0, LocalBackground, LowDraw, HighDraw, TopDraw, UI}
+

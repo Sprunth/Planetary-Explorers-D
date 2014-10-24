@@ -2,10 +2,22 @@ module DrawableObject;
 
 import dsfml.graphics;
 
-class DrawableObject
+import GameObject;
+
+class DrawableObject : IUpdateable, IDrawable
 {
 	Sprite spr;
 	this()
+	{
+		
+	}
+
+	void Update()
+	{
+		
+	}
+
+	void Draw(DrawLayer dl, RenderTarget target)
 	{
 		
 	}

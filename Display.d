@@ -1,15 +1,36 @@
 module Display;
 
+import std.traits;
+
 import dsfml.graphics;
 
-class Display
+import DrawableObject;
+import GameObject;
+
+class Display : IUpdateable, IDrawable
 {
 	DrawableObject[] toDraw; 
 
-	RenderTarget target;
+	RenderTarget parentTarget, target;
 
-	this()
+	this(RenderTarget parentTarget)
 	{
+		this.parentTarget = parentTarget;
+		target = new RenderTarget();
 		
+	}
+
+	void Update()
+	{}
+
+	void Draw(DrawLayer dl, RenderTarget target)
+	{
+		foreach (i, member; EnumMembers!DrawLayer)
+		{
+			foreach (d; toDraw)
+			{
+				d.draw(i, target);
+			}
+		}
 	}
 }
