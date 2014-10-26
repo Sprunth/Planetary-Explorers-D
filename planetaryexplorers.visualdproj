@@ -101,10 +101,8 @@
  <Folder name="planetaryexplorers">
   <Folder name="planetaryexplorers">
    <Folder name="source">
-    <Folder name="displays">
-     <File path="Display.d" />
-    </Folder>
     <File path="source\app.d" />
+    <File path="Display.d" />
     <File path="DrawableObject.d" />
     <File path="GameObject.d" />
    </Folder>
